@@ -16,3 +16,9 @@ let arr2: (number | string)[] = [];
 arr2.push(2, "srsfd");
 arr2.push("dfghdfh", 2);
 console.log("arr2", arr2);
+
+// interface IArray{
+//     [index:number]:number
+// }
+
+// ^ similar to this syntax type array=number[]

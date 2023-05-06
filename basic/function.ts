@@ -105,3 +105,16 @@ console.log(
   "cal",
   cal(1, 2, (a, b) => a + b)
 );
+// when we dont know the type
+const test = (params: unknown) => {
+  if (typeof params === "number") {
+    console.log("this is number param");
+  } else if (typeof params === "string") {
+    console.log("this is string param");
+  } else {
+    console.log("wrong");
+  }
+};
+test(1);
+test("1");
+test(false);
