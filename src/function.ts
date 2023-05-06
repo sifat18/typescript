@@ -87,3 +87,21 @@ console.log("add4", add4("x", "y"));
 console.log(add2("x", "y"));
 console.log(add3("x", 33));
 // add2(2, 3) ==> wont work
+
+// rest params
+// it becomes any type of array if not defined
+const greet = (...friends: string[]): void => {
+  friends.forEach((i) => console.log("greet", i));
+};
+greet("a", "b", "c", "d");
+const cal = (
+  num: number,
+  num2: number,
+  oper: (x: number, y: number) => number
+) => {
+  return oper(num, num2);
+};
+console.log(
+  "cal",
+  cal(1, 2, (a, b) => a + b)
+);

@@ -42,3 +42,13 @@ enum Colors {
 // define array types
 const arry1: number[] = [1, 2, 3, 4];
 console.log("Colors.color1", Colors.color1);
+
+// nullish coalesnace operator ==> it checks for null or undefined value and is detected using ?? syntax
+const isAuthenticate = null;
+const isAuthenticate2 = "";
+console.log("nullish", isAuthenticate ?? "null /undefined ashbe");
+console.log("nullish kisu asbe na", isAuthenticate2 ?? "null /undefined ashbe");
+console.log(
+  "normal ternary",
+  isAuthenticate2 ? "kisui ashbe na " : isAuthenticate2
+);

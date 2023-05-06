@@ -16,3 +16,25 @@ const manush2: IPerson = {
   shokh: "lazing around",
 };
 console.log(manush2.boyosh);
+
+// for objects
+type Noob = {
+  name: string;
+  exp: number;
+};
+type Mid = Noob & {
+  desig: string;
+  salary?: number;
+};
+type senior = Mid & {
+  car: string;
+};
+
+const p1: senior = { name: "ttt", exp: 2, desig: "aa", car: "" };
+
+const developer: Noob | Mid | senior = {
+  name: "ttt",
+  exp: 2,
+  desig: "aa",
+  salary: 214,
+};

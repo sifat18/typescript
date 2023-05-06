@@ -32,3 +32,6 @@ const person: {
   hobby: "asdkjasd",
 };
 console.log(person.hobby);
+
+// const { age: string } = person; cant set type like this as this renames the destructures property
+// console.log("string", string);
