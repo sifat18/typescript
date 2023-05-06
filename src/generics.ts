@@ -85,5 +85,5 @@ console.log(ars);
 
 type tupple = [number, string];
 const tupplee: tupple = [1, "1"];
-tupplee.push("12");
+// tupplee[0] = "22"; cant change
 console.log("tupplee", tupplee);
