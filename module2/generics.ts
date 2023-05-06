@@ -134,3 +134,7 @@ const genericFunc4 = <T, X extends keyof T>(param1: T, key: X): T[X] => {
   return param1[key];
 };
 genericFunc4({ name: "sad", age: 3243 }, "age");
+// generic conditiona;
+type bandhubi = "a" | "B" | "C";
+type removeBandhubi<T, K> = T extends K ? never : T;
+type condional = removeBandhubi<bandhubi, "a">;
