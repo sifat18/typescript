@@ -1,0 +1,515 @@
+# practice nosql online here [here](https://mongoplayground.net/).
+
+# with this data -> 
+
+db={
+  "friends": [
+    {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "age": 28,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+      },
+      "favorites": {
+        "color": "blue",
+        "food": "pizza",
+        "movie": "The Shawshank Redemption"
+      },
+      "friends": [
+        {
+          "name": "Jane Smith",
+          "email": "janesmith@example.com"
+        },
+        {
+          "name": "Mike Johnson",
+          "email": "mikejohnson@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Alice Williams",
+      "email": "alicewilliams@example.com",
+      "age": 35,
+      "address": {
+        "street": "456 Elm St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipcode": "94101"
+      },
+      "favorites": {
+        "color": "green",
+        "food": "sushi",
+        "movie": "The Godfather"
+      },
+      "friends": [
+        {
+          "name": "Bob Anderson",
+          "email": "bobanderson@example.com"
+        },
+        {
+          "name": "Emily Davis",
+          "email": "emilydavis@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Mark Johnson",
+      "email": "markjohnson@example.com",
+      "age": 30,
+      "address": {
+        "street": "789 Elm St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+      },
+      "favorites": {
+        "color": "red",
+        "food": "pasta",
+        "movie": "The Shawshank Redemption"
+      },
+      "friends": [
+        {
+          "name": "Sarah Smith",
+          "email": "sarahsmith@example.com"
+        },
+        {
+          "name": "Alex Johnson",
+          "email": "alexjohnson@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Emily Davis",
+      "email": "emilydavis@example.com",
+      "age": 32,
+      "address": {
+        "street": "345 Main St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipcode": "94101"
+      },
+      "favorites": {
+        "color": "purple",
+        "food": "sushi",
+        "movie": "The Godfather"
+      },
+      "friends": [
+        {
+          "name": "David Wilson",
+          "email": "davidwilson@example.com"
+        },
+        {
+          "name": "Jennifer Smith",
+          "email": "jennifersmith@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Michael Johnson",
+      "email": "michaeljohnson@example.com",
+      "age": 27,
+      "address": {
+        "street": "567 Elm St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+      },
+      "favorites": {
+        "color": "yellow",
+        "food": "pizza",
+        "movie": "The Shawshank Redemption"
+      },
+      "friends": [
+        {
+          "name": "Karen Davis",
+          "email": "karendavis@example.com"
+        },
+        {
+          "name": "Steven Smith",
+          "email": "stevensmith@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Sophia Anderson",
+      "email": "sophiaanderson@example.com",
+      "age": 29,
+      "address": {
+        "street": "678 Main St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipcode": "94101"
+      },
+      "favorites": {
+        "color": "pink",
+        "food": "sushi",
+        "movie": "The Godfather"
+      },
+      "friends": [
+        {
+          "name": "Daniel Johnson",
+          "email": "danieljohnson@example.com"
+        },
+        {
+          "name": "Olivia Smith",
+          "email": "oliviasmith@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Robert Davis",
+      "email": "robertdavis@example.com",
+      "age": 33,
+      "address": {
+        "street": "890 Elm St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+      },
+      "favorites": {
+        "color": "orange",
+        "food": "pasta",
+        "movie": "The Shawshank Redemption"
+      },
+      "friends": [
+        {
+          "name": "Jessica Anderson",
+          "email": "jessicaanderson@example.com"
+        },
+        {
+          "name": "Thomas Smith",
+          "email": "thomassmith@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Emma Smith",
+      "email": "emmasmith@example.com",
+      "age": 31,
+      "address": {
+        "street": "123 Elm St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipcode": "94101"
+      },
+      "favorites": {
+        "color": "teal",
+        "food": "sushi",
+        "movie": "The Godfather"
+      },
+      "friends": [
+        {
+          "name": "Andrew Davis",
+          "email": "andrewdavis@example.com"
+        },
+        {
+          "name": "Sophia Johnson",
+          "email": "sophiajohnson@example.com"
+        }
+      ]
+    },
+    {
+      "name": "William Johnson",
+      "email": "williamjohnson@example.com",
+      "age": 36,
+      "address": {
+        "street": "456 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+      },
+      "favorites": {
+        "color": "gray",
+        "food": "pizza",
+        "movie": "The Shawshank Redemption"
+      },
+      "friends": [
+        {
+          "name": "Megan Anderson",
+          "email": "megananderson@example.com"
+        },
+        {
+          "name": "Jason Smith",
+          "email": "jasonsmith@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Olivia Smith",
+      "email": "oliviasmith@example.com",
+      "age": 26,
+      "address": {
+        "street": "789 Elm St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipcode": "94101"
+      },
+      "favorites": {
+        "color": "black",
+        "food": "sushi",
+        "movie": "The Godfather"
+      },
+      "friends": [
+        {
+          "name": "Jacob Davis",
+          "email": "jacobdavis@example.com"
+        },
+        {
+          "name": "Isabella Johnson",
+          "email": "isabellajohnson@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Daniel Davis",
+      "email": "danieldavis@example.com",
+      "age": 34,
+      "address": {
+        "street": "345 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zipcode": "10001"
+      },
+      "favorites": {
+        "color": "navy",
+        "food": "pasta",
+        "movie": "The Shawshank Redemption"
+      },
+      "friends": [
+        {
+          "name": "Sophia Anderson",
+          "email": "sophiaanderson@example.com"
+        },
+        {
+          "name": "William Smith",
+          "email": "williamsmith@example.com"
+        }
+      ]
+    }
+  ],
+
+}
+
+
+Task 1: Find all users who are located in New York.
+db.friends.aggregate([
+  {
+    $match: {
+      "address.city": "New York"
+    }
+  },
+  {
+    "$project": {
+      "name": 1,
+      "email": 1
+    }
+  }
+])
+Task 2: Find the user(s) with the email "johndoe@example.com" and retrieve their favorite movie.
+db.friends.aggregate([
+  {
+    $match: {
+      "email": "johndoe@example.com"
+    }
+  },
+  {
+    "$project": {
+      "favorites.movie": 1
+    }
+  }
+])
+Task 3: Find all users with "pizza" as their favorite food and sort them according to age.
+db.friends.aggregate([
+  {
+    $match: {
+      "favorites.food": "pizza"
+    }
+  },
+  {
+    $sort: {
+      age: 1
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      age: 1
+    }
+  }
+
+Task 4: Find all users over 30 whose favorite color is "green".
+db.friends.aggregate([
+  {
+    $match: {
+      "age": {
+        $gt: 30
+      },
+      "favorites.color": "green"
+    }
+  },
+  {
+    $sort: {
+      age: 1
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      age: 1,
+      favorites: 1
+    }
+  }
+])
+
+Task 5: Count the number of users whose favorite movie is "The Shawshank Redemption."
+db.friends.aggregate([
+  {
+    $match: {
+      "favorites.movie": "The Shawshank Redemption"
+    }
+  },
+  {
+    $sort: {
+      age: 1
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      age: 1,
+      
+    }
+  },
+  {
+    "$count": "total_documents"
+  }
+])
+
+Task 6: Update the zipcode of the user with the email "johndoe@example.com" to "10002".
+db.friends.aggregate([
+  {
+    $match: {
+      "email": "johndoe@example.com"
+    }
+  },
+  {
+    $set: {
+      "address.zipcode": 10002
+    }
+  },
+  
+])
+
+Task 7: Delete the user with the email "alicewilliams@example.com" from the user data.
+db.friends.aggregate([
+  {
+    $match: {
+      "email": {
+        $ne: "alicewilliams@example.com"
+      }
+    }
+  },
+  {
+    $out: "friends"
+  },
+  {
+    $project: {
+      age: 1,
+      name: 1
+    }
+  },
+  
+])
+
+Task 8: Group users by their favorite movie and retrieve the average age in each movie group.
+db.friends.aggregate([
+  {
+    $group: {
+      _id: "$favorites.movie",
+      avgAge: {
+        "$avg": "$age"
+      }
+    }
+  }
+])
+
+Task 9: Calculate the average age of users with a favorite " pizza " food.
+db.friends.aggregate([
+  {
+    $match: {
+      "favorites.food": "pizza"
+    }
+  },
+  {
+    $group: {
+      _id: "",
+      avAge: {
+        "$avg": "$age"
+      }
+    }
+  }
+])
+db={
+  "orders": [
+    {
+      "_id": 1,
+      "order_number": "ORD-001",
+      "customer_id": 1,
+      "total_amount": 100.0
+    },
+    {
+      "_id": 2,
+      "order_number": "ORD-002",
+      "customer_id": 2,
+      "total_amount": 150.0
+    },
+    {
+      "_id": 3,
+      "order_number": "ORD-003",
+      "customer_id": 1,
+      "total_amount": 200.0
+    }
+  ],
+  "customer": [
+    {
+      "_id": 1,
+      "name": "Alice Williams",
+      "email": "alice@example.com"
+    },
+    {
+      "_id": 2,
+      "name": "Bob Anderson",
+      "email": "bob@example.com"
+    },
+    {
+      "_id": 3,
+      "name": "Emily Davis",
+      "email": "emily@example.com"
+    }
+  ]
+  
+  
+}
+Task 10: Perform a lookup aggregation to retrieve the orders data along with the customer details for each order.
+db.orders.aggregate([
+  {
+    "$project": {
+      order_number: 1,
+      total_amount: 1,
+      customer_id: 1
+    }
+  },
+  {
+    "$lookup": {
+      "from": "customer",
+      "localField": "customer_id",
+      "foreignField": "_id",
+      "as": "details"
+    }
+  }
+])
+
