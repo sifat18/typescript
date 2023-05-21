@@ -453,6 +453,9 @@ db.friends.aggregate([
     }
   }
 ])
+
+
+# Task 10: Perform a lookup aggregation to retrieve the orders data along with the customer details for each order.
 db={
   "orders": [
     {
@@ -494,7 +497,7 @@ db={
   
   
 }
-# Task 10: Perform a lookup aggregation to retrieve the orders data along with the customer details for each order.
+
 db.orders.aggregate([
   {
     "$project": {
@@ -512,4 +515,126 @@ db.orders.aggregate([
     }
   }
 ])
+# --------------------Optional-----------------------
 
+## Task 11: Group users by their favorite color and retrieve the count of users in each color group.
+db.friends.aggregate([
+  {
+    $group: {
+      _id: "$favorites.color",
+      total: {
+        "$count": {}
+      }
+    }
+  }
+])
+
+# Task 12:Find the user(s) with the highest age.
+db.friends.aggregate([
+  {
+    $project: {
+      name: 1,
+      email: 1,
+      age: 1
+    }
+  },
+  {
+    $group: {
+      _id: "",
+      maxAge: {
+        $max: "$age"
+      }
+    }
+  },
+  
+])
+# Task 13:Find the most common favorite food among all users.
+db.friends.aggregate([
+  {
+    $project: {
+      name: 1,
+      email: 1,
+      age: 1,
+      "favorites.food": 1
+    }
+  },
+  {
+    $group: {
+      _id: "$favorites.food",
+      total: {
+        $count: {}
+      }
+    }
+  },
+  {
+    $sort: {
+      total: -1
+    }
+  },
+  {
+    $limit: 1
+  }
+])
+# Task 14:Calculate the total count of friends across all users..
+db.friends.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalFriends: {
+        "$sum": {
+          "$size": "$friends"
+        }
+      }
+    }
+  },
+  
+])
+# Task 15:Find the user(s) with the longest name.
+db.friends.aggregate([
+  {
+    "$project": {
+      name: 1
+    }
+  },
+  {
+    $sort: {
+      name: -1
+    }
+  },
+  {
+    $limit: 1
+  }
+])
+# Task 16:Calculate each state's total number of users in the address field.
+db.friends.aggregate([
+  {
+    $group: {
+      _id: "$address.state",
+      totalUsers: {
+        $count: {}
+      }
+    }
+  }
+])
+
+# Task 17:Find the user(s) with the highest number of friends.
+db.friends.aggregate([
+  {
+    $group: {
+      _id: "$name",
+      totalfriends: {
+        $sum: {
+          $size: "$friends"
+        }
+      }
+    }
+  },
+  {
+    $sort: {
+      totalfriends: -1
+    }
+  },
+  {
+    $limit: 1
+  }
+])
